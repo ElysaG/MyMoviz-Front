@@ -103,6 +103,7 @@ function Home() {
         voteAverage={data.vote_average}
         voteCount={data.vote_count}
       />
+
     );
   });
 
