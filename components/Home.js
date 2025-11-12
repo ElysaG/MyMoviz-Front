@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     // OLD:"http://localhost:3000/movies"
 
-    fetch("https://my-moviz-back-sigma.vercel.app/")
+    fetch("https://my-moviz-back-sigma.vercel.app/movies")
       .then((res) => res.json())
       .then((data) => setMoviesData(data.movies.results));
   }, []);
