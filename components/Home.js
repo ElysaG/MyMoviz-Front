@@ -15,7 +15,7 @@ function Home() {
 
     fetch("https://my-moviz-back-sigma.vercel.app/movies")
       .then((res) => res.json())
-      .then((data) => setMoviesData(data.movies.results));
+      .then((data) => setMoviesData(data.movies));
   }, []);
 
   console.log(moviesData);
