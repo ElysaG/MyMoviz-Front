@@ -4,11 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import Movie from "./Movie";
 import "antd/dist/antd.css";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home2.module.css";
+import SearchBar from "./SearchBar";
+import SortSelect from "./SortSelect";
 
 function Home() {
   const [likedMovies, setLikedMovies] = useState([]);
   const [moviesData, setMoviesData] = useState([]);
+  const [search, setSearch] = useState("");
+  const [sortType, setSortType] = useState("");
 
   useEffect(() => {
     // OLD:"http://localhost:3000/movies"
@@ -46,31 +50,51 @@ function Home() {
     <div className={styles.popoverContent}>{likedMoviesPopover}</div>
   );
 
- 
-  const movies = Array.isArray(moviesData)
-    ? moviesData.map((data, i) => {
-        const isLiked = likedMovies.some((movie) => movie === data.title);
-        return (
-          <Movie
-            key={i}
-            updateLikedMovies={updateLikedMovies}
-            isLiked={isLiked}
-            title={data.title}
-            overview={data.overview}
-            poster={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-            voteAverage={data.vote_average}
-            voteCount={data.vote_count}
-          />
-        );
-      })
-    : [];
+  //Fonction de tri
+  function sortMovies(movies) {
+    if (sortType === "rating-desc") {
+      return [...movies].sort((a, b) => b.vote_average - a.vote_average);
+    }
+    if (sortType === "rating-asc") {
+      return [...movies].sort((a, b) => a.vote_average - b.vote_average);
+    }
+    if (sortType === "title-asc") {
+      return [...movies].sort((a, b) => a.title.localeCompare(b.title));
+    }
+    return movies;
+  }
+
+  // Filtre
+  const filteredMovies = moviesData.filter((movie) =>
+    movie.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+  // tri+filtre
+  const sortedMovies = sortMovies(filteredMovies);
+
+  // cartes
+  const movies = sortedMovies.map((data, i) => {
+    const isLiked = likedMovies.some((movie) => movie === data.title);
+    return (
+      <Movie
+        key={i}
+        updateLikedMovies={updateLikedMovies}
+        isLiked={isLiked}
+        title={data.title}
+        overview={data.overview}
+        poster={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+        voteAverage={data.vote_average}
+        voteCount={data.vote_count}
+      />
+    );
+  });
 
   return (
     <div className={styles.main}>
       <div className={styles.header}>
         <div className={styles.logocontainer}>
           <img src="logo.png" alt="Logo" />
-          <img className={styles.logo} src="logoletter.png" alt="Letter logo" />
+       
         </div>
         <Popover
           title="Liked movies"
@@ -82,6 +106,10 @@ function Home() {
         </Popover>
       </div>
       <div className={styles.title}>LAST RELEASES</div>
+      <div className={styles.triBarre}>
+        <SearchBar search={search} setSearch={setSearch} />
+        <SortSelect onChange={setSortType} />
+      </div>
       <div className={styles.moviesContainer}>{movies}</div>
     </div>
   );
