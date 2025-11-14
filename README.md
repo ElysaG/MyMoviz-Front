@@ -13,6 +13,8 @@ Ce projet a été réalisé dans le cadre de ma formation à La Capsule – Dév
 - Page dédiée aux favoris
 - Interface simple, responsive et intuitive
 - Communication directe avec le backend déployé sur Vercel
+- Recherche de films par mot-clé via la barre de recherche
+- Tri des films par note (croissante / décroissante) et par titre
 
 ### Backend:
 - API REST en Node.js / Express
@@ -50,7 +52,8 @@ MyMoviz-Front/
 │   ├── components/
 │   │   ├── MovieItem.js
 │   │   ├── Favorites.js
-│   │   └── … 
+│   │   ├── SortSelect.js
+│   │   └── SearchBar.js 
 │   ├── pages/
 │   ├── App.js
 │   ├── index.js
@@ -114,6 +117,8 @@ Il démontre ma capacité à construire une petite application full-stack entiè
 - Ajout d’un système d’authentification pour des favoris persistants
 - Ajout d’une page "Details" pour chaque film
 - Tests unitaires (Jest / Testing Library)
+- Ajout d’une recherche locale et d’un tri dynamique sur le frontend
+- Création d’une page "Favorites" affichant les films ajoutés en favoris
 
 
 
