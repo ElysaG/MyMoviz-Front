@@ -1,7 +1,7 @@
 # My Moviz
 
 My Moviz est une application web full-stack permettant de rechercher des films, d’afficher leurs informations et de gérer une liste personnelle de favoris.
-Ce projet a été réalisé dans le cadre de ma formation à La Capsule – Développeur Web Full-Stack JavaScript et déployé entièrement sur Vercel (frontend + backend serverless).
+Ce projet a été réalisé dans le cadre de ma formation à La Capsule – Développeur Web Full-Stack JavaScript et déployé entièrement sur Vercel (frontend + backend).
 
 
 ## Fonctionnalités
@@ -50,19 +50,19 @@ MyMoviz-Front/
 ├── public/
 ├── src/
 │   ├── components/
-│   │   ├── MovieItem.js
-│   │   ├── Favorites.js
+│   │   ├── Home.js
+│   │   ├── Movie.js
 │   │   ├── SortSelect.js
 │   │   └── SearchBar.js 
 │   ├── pages/
-│   ├── App.js
+│   ├── _app.js
 │   ├── index.js
 │   └── styles/
 └── package.json
 
 MyMoviz-Back/
 ├── routes/
-│   └── movies.js
+│   └── index.js
 ├── app.js
 ├── vercel.json
 └── package.json
