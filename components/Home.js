@@ -7,6 +7,7 @@ import "antd/dist/antd.css";
 import styles from "../styles/Home2.module.css";
 import SearchBar from "./SearchBar";
 import SortSelect from "./SortSelect";
+import Footer from "./Footer";
 
 function Home() {
   const [likedMovies, setLikedMovies] = useState([]);
@@ -94,7 +95,6 @@ function Home() {
       <div className={styles.header}>
         <div className={styles.logocontainer}>
           <img src="logo.png" alt="Logo" />
-       
         </div>
         <Popover
           title="Liked movies"
@@ -102,7 +102,7 @@ function Home() {
           className={styles.popover}
           trigger="click"
         >
-          <Button>♥ {likedMovies.length} movie(s)</Button>
+          <Button>❤️ {likedMovies.length} movie(s)</Button>
         </Popover>
       </div>
       <div className={styles.title}>LAST RELEASES</div>
@@ -111,6 +111,7 @@ function Home() {
         <SortSelect onChange={setSortType} />
       </div>
       <div className={styles.moviesContainer}>{movies}</div>
+      <Footer/>
     </div>
   );
 }

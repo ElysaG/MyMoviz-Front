@@ -16,7 +16,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .title {
@@ -28,7 +28,11 @@
   letter-spacing: 1px;
 }
 
-
+.triBarre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .moviesContainer {
   display: grid;
@@ -39,13 +43,11 @@
   margin: auto;
 }
 
-
-
 .card {
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -53,7 +55,7 @@
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .image {
@@ -66,8 +68,6 @@
 .card:hover .image {
   transform: scale(1.04);
 }
-
-
 
 .textContainer {
   padding: 1.3rem;
@@ -93,14 +93,12 @@
   overflow: hidden;
 }
 
-
-
 .iconContainer {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
   padding-top: 0.8rem;
-  border-top: 1px solid rgba(0,0,0,0.07);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .iconContainer span {
@@ -126,30 +124,24 @@
   transform: scale(1.15);
 }
 
-
-
 .like {
   color: #bbb;
   transition: color 0.2s ease;
 }
 
 .like[style*="color: rgb(231, 76, 60)"],
-.like[style*='color:#e74c3c'] {
+.like[style*="color:#e74c3c"] {
   color: #e74c3c !important;
 }
-
-
 
 .watch {
   color: #bbb;
 }
 
 .watch[style*="color: rgb(231, 76, 60)"],
-.watch[style*='color:#e74c3c'] {
+.watch[style*="color:#e74c3c"] {
   color: #e74c3c !important;
 }
-
-
 
 .note {
   color: #bbb;
@@ -159,8 +151,6 @@
 .note[style*="#2196f3"] {
   color: #2196f3 !important;
 }
-
-
 
 .popover button {
   background: #ffffff !important;

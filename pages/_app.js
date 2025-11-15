@@ -5,7 +5,7 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Movies App</title>
+        <title>MyMoviz App</title>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </Head>
       <Component {...pageProps} />
