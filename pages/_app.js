@@ -1,11 +1,12 @@
-import '../styles/globals.css';
-import Head from 'next/head';
+import "../styles/globals.css";
+import Head from "next/head";
 
 function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Next.js App</title>
+        <title>Movies App</title>
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </Head>
       <Component {...pageProps} />
     </>
